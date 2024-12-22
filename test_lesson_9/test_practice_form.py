@@ -2,7 +2,6 @@ import os
 from selene import browser, by, have
 from selene.support.conditions import be
 
-
 def test_complete_fields(browser_settings):
     browser.open('/automation-practice-form')
     browser.driver.execute_script("$('#fixedban').remove()")
@@ -20,7 +19,7 @@ def test_complete_fields(browser_settings):
     browser.element('#subjectsInput').type('Computer Science').press_enter()
     browser.element('#subjectsInput').type('Maths').press_enter()
     browser.element('[for=hobbies-checkbox-3]').click()
-    browser.element('#uploadPicture').send_keys(os.path.abspath('../picture/123.png'))
+    browser.element('#uploadPicture').send_keys(os.path.abspath('../file/123.png'))
     browser.element('#currentAddress').set('India')
     browser.element('#state').click().element(by.text('Uttar Pradesh')).click()
     browser.element('#city').click().element(by.text('Agra')).click()
